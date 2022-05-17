@@ -2,10 +2,10 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.android.navigation.LoginFragment">
+    tools:context="com.example.android.navigation.RegisterFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/LoginFragment"
+        android:id="@+id/RegisterFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -17,7 +17,7 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="54dp"
             android:layout_marginEnd="32dp"
-            android:text="@string/sign_up"
+            android:text="@string/registerText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -80,14 +80,14 @@
         </TextView>
 
         <Button
-            android:id="@+id/loginButton"
+            android:id="@+id/signUpButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/marginStart"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="@dimen/marginEnd"
             android:gravity="center"
-            android:text="@string/loginBtn"
+            android:text="@string/registerBtn"
             style="@style/ButtonStyle"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -95,18 +95,17 @@
         </Button>
 
         <TextView
-            android:id="@+id/newUserText"
+            android:id="@+id/userText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/marginStart"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="@dimen/marginEnd"
-            android:text="New User Register"
+            android:text="Already a user? Login"
             style="@style/smallRegisterStyle"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/loginButton">
-
+            app:layout_constraintTop_toBottomOf="@+id/signUpButton">
         </TextView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
