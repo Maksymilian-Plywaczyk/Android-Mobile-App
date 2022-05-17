@@ -103,7 +103,7 @@
             android:layout_marginStart="@dimen/marginStart"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="@dimen/marginEnd"
-            android:text="New User Register"
+            android:text="@string/new_user_register"
             style="@style/smallRegisterStyle"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

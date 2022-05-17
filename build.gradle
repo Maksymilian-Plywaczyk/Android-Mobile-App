@@ -1,4 +1,9 @@
 buildscript {
+    ext{
+        navigationVersion = "2.3.0"
+        gradleVersion = '7.1.2'
+        dataBindingCompilerVersion = gradleVersion
+    }
     dependencies {
         classpath 'com.google.gms:google-services:4.3.10'
     }

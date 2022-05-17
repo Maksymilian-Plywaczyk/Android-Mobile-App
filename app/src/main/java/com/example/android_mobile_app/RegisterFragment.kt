@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import com.example.android_mobile_app.databinding.FragmentRegisterBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -28,11 +29,12 @@ class RegisterFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate<FragmentRegisterBinding>(
+        binding = DataBindingUtil.inflate(
             inflater,
-            R.layout.fragment_login, container, false
+            R.layout.fragment_register, container, false
         )
         mAuth = Firebase.auth
+        binding.userText.setOnClickListener { view:View ->view.findNavController().navigate(R.id.action_registerFragment_to_loginFragment) }
         binding.signUpButton.setOnClickListener {
             validateData()
         }
@@ -40,11 +42,11 @@ class RegisterFragment : Fragment() {
     }
 
     private fun validateData() {
-        email = binding.loginEmail.toString().trim()
-        password = binding.loginPassword.toString().trim()
+        email = binding.loginEmail.text.toString().trim()
+        password = binding.loginPassword.text.toString().trim()
 
         //validate Data
-        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+        if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             binding.loginEmail.error = "Invalid email format"
         } else if (TextUtils.isEmpty(password)) {
             binding.loginPassword.error = "Please enter password"
@@ -60,8 +62,8 @@ class RegisterFragment : Fragment() {
             val firebaseUser = mAuth.currentUser
             val email = firebaseUser!!.email
             Toast.makeText(activity, "SingUp as $email", Toast.LENGTH_SHORT).show()
-            startActivity(Intent(activity, MainActivity::class.java))
-            activity?.finish()
+//            startActivity(Intent(activity, MainActivity::class.java))
+//            activity?.finish()
         }.addOnFailureListener { e ->
             Toast.makeText(activity, "SingUp  failed due to ${e.message}", Toast.LENGTH_SHORT)
                 .show()

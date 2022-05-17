@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import com.example.android_mobile_app.databinding.FragmentLoginBinding
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.AuthResult
@@ -28,14 +29,14 @@ class LoginFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate<FragmentLoginBinding>(
+        binding = DataBindingUtil.inflate(
             inflater,
             R.layout.fragment_login, container, false
         )
         mAuth = Firebase.auth
         checkUser()
-        binding.newUserText.setOnClickListener {
-            startActivity(Intent(activity, RegisterFragment::class.java))
+        binding.newUserText.setOnClickListener {view:View ->
+            view.findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
         }
         binding.loginButton.setOnClickListener {
             validateData()
@@ -62,8 +63,8 @@ class LoginFragment : Fragment() {
             val firebaseUser = mAuth.currentUser
             val email = firebaseUser!!.email
             Toast.makeText(activity, "LoggedIn as $email", Toast.LENGTH_SHORT).show()
-            startActivity(Intent(activity, MainActivity::class.java))
-            activity?.finish()
+//            startActivity(Intent(activity, MainActivity::class.java))
+//            activity?.finish()
         }.addOnFailureListener { e ->
             Toast.makeText(activity, "Login failed due to ${e.message}", Toast.LENGTH_SHORT).show()
         }
@@ -72,8 +73,8 @@ class LoginFragment : Fragment() {
     private fun checkUser() {
         val firebaseUser = mAuth.currentUser
         if (firebaseUser != null) {
-            startActivity(Intent(activity, MainActivity::class.java))
-            activity?.finish()
+//            startActivity(Intent(activity, MainActivity::class.java))
+//            activity?.finish()
         }
     }
 }
