@@ -3,9 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/MaksPlywaczyk/AndroidStudioProjects/AndroidMobileApp/app/src/main/res/drawable-v24/about_android_trivia.xml" value="0.169" />
         <entry key="..\:/Users/MaksPlywaczyk/AndroidStudioProjects/AndroidMobileApp/app/src/main/res/layout/activity_main.xml" value="0.21331521739130435" />
+        <entry key="..\:/Users/MaksPlywaczyk/AndroidStudioProjects/AndroidMobileApp/app/src/main/res/layout/fragment_about.xml" value="0.25" />
         <entry key="..\:/Users/MaksPlywaczyk/AndroidStudioProjects/AndroidMobileApp/app/src/main/res/layout/fragment_login.xml" value="0.22" />
         <entry key="..\:/Users/MaksPlywaczyk/AndroidStudioProjects/AndroidMobileApp/app/src/main/res/layout/fragment_register.xml" value="0.15350877192982457" />
+        <entry key="..\:/Users/MaksPlywaczyk/AndroidStudioProjects/AndroidMobileApp/app/src/main/res/menu/options_menu.xml" value="0.2640625" />
       </map>
     </option>
   </component>

@@ -10,4 +10,6 @@
     <string name="registerBtn">Sing Up</string>
     <string name="registerText">Sing Up</string>
     <string name="new_user_register">New User Register</string>
+    <string name="about">About</string>
+    <string name="about_text">Android Trivia will help remind you of important concepts you have learned and will learn in Android development.\n\nConsider modifying the questions and graphics to make this game your own!</string>
 </resources>
