@@ -28,4 +28,8 @@
         android:name="com.example.android_mobile_app.AboutFragment"
         android:label="fragment_about"
         tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/cameraXFragment"
+        android:name="com.example.android_mobile_app.CameraXFragment"
+        android:label="CameraXFragment" />
 </navigation>
