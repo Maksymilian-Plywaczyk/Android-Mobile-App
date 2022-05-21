@@ -75,8 +75,7 @@ class LoginFragment : Fragment() {
             val firebaseUser = mAuth.currentUser
             val email = firebaseUser!!.email
             Toast.makeText(activity, "LoggedIn as $email", Toast.LENGTH_SHORT).show()
-//            startActivity(Intent(activity, MainActivity::class.java))
-//            activity?.finish()
+            view?.findNavController()?.navigate(R.id.action_loginFragment_to_openFragment)
         }.addOnFailureListener { e ->
             Toast.makeText(activity, "Login failed due to ${e.message}", Toast.LENGTH_SHORT).show()
         }

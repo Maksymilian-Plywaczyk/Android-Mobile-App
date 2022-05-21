@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_loginFragment_to_registerFragment"
             app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_openFragment"
+            app:destination="@id/openFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -22,6 +25,9 @@
         <action
             android:id="@+id/action_registerFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_registerFragment_to_openFragment"
+            app:destination="@id/openFragment" />
     </fragment>
     <fragment
         android:id="@+id/aboutFragment5"
@@ -32,4 +38,9 @@
         android:id="@+id/cameraXFragment"
         android:name="com.example.android_mobile_app.CameraXFragment"
         android:label="CameraXFragment" />
+    <fragment
+        android:id="@+id/openFragment"
+        android:name="com.example.android_mobile_app.OpenFragment"
+        tools:layout="@layout/fragment_open"
+        android:label="OpenFragment" />
 </navigation>

@@ -62,8 +62,7 @@ class RegisterFragment : Fragment() {
             val firebaseUser = mAuth.currentUser
             val email = firebaseUser!!.email
             Toast.makeText(activity, "SingUp as $email", Toast.LENGTH_SHORT).show()
-//            startActivity(Intent(activity, MainActivity::class.java))
-//            activity?.finish()
+            view?.findNavController()?.navigate(R.id.action_registerFragment_to_openFragment)
         }.addOnFailureListener { e ->
             Toast.makeText(activity, "SingUp  failed due to ${e.message}", Toast.LENGTH_SHORT)
                 .show()
