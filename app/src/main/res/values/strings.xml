@@ -16,4 +16,5 @@
     <string name="start_capture">Start Capture</string>
     <string name="stop_capture">Stop Capture</string>
     <string name="camerax">CameraX</string>
+    <string name="logout">LOGOUT</string>
 </resources>

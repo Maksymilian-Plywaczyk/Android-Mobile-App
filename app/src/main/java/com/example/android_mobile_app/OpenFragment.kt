@@ -26,6 +26,9 @@ class OpenFragment : Fragment() {
             inflater,
             R.layout.fragment_open, container, false
         )
+        binding.lougoutButton.setOnClickListener {
+            view?.findNavController()?.navigate(R.id.action_openFragment_to_loginFragment)
+        }
         mAuth = Firebase.auth
         return binding.root
     }
