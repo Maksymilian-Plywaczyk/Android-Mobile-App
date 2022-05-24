@@ -41,7 +41,7 @@
         android:label="CameraXFragment" />
     <fragment
         android:id="@+id/openFragment"
-        android:name="com.example.android_mobile_app.OpenFragment"
+        android:name="com.example.android_mobile_app.WeatherFragment"
         tools:layout="@layout/fragment_open"
         android:label="OpenFragment" >
         <action

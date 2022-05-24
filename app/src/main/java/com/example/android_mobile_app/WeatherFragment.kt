@@ -14,7 +14,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
 
-class OpenFragment : Fragment() {
+class WeatherFragment : Fragment() {
     private lateinit var binding: FragmentOpenBinding
     private lateinit var mAuth: FirebaseAuth
 

@@ -1,22 +1,21 @@
 package com.example.android_mobile_app
 
-import android.content.Intent
+import android.content.Context
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Patterns
 import android.view.*
-import androidx.fragment.app.Fragment
+import android.view.inputmethod.InputMethodManager
+import android.widget.TextView.OnEditorActionListener
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.android_mobile_app.databinding.FragmentLoginBinding
-import com.google.android.gms.tasks.OnCompleteListener
-import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import kotlinx.coroutines.Dispatchers.Main
 
 
 class LoginFragment : Fragment() {
@@ -40,6 +39,7 @@ class LoginFragment : Fragment() {
         binding.loginButton.setOnClickListener {
             validateData()
         }
+
         setHasOptionsMenu(true)
         return binding.root
     }
