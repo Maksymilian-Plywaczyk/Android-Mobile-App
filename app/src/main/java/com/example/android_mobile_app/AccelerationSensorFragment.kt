@@ -20,8 +20,7 @@ import com.jjoe64.graphview.series.LineGraphSeries
 import kotlin.math.abs
 import kotlin.math.sqrt
 
-
-class SensorsFragment : Fragment(), SensorEventListener {
+class AccelerationSensorFragment : Fragment(), SensorEventListener {
     private lateinit var binding: FragmentSensorsBinding
     private lateinit var sensorManager: SensorManager
     private var accelerometer: Sensor? = null

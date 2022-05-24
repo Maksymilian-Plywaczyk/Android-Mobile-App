@@ -50,7 +50,12 @@
     </fragment>
     <fragment
         android:id="@+id/sensorsFragment"
-        android:name="com.example.android_mobile_app.SensorsFragment"
+        android:name="com.example.android_mobile_app.AccelerationSensorFragment"
         tools:layout="@layout/fragment_sensors"
         android:label="SensorsFragment" />
+    <fragment
+        android:id="@+id/ligthSensorFragment"
+        android:name="com.example.android_mobile_app.LigthSensorFragment"
+        tools:layout="@layout/fragment_ligth_sensor"
+        android:label="LigthSensorFragment" />
 </navigation>

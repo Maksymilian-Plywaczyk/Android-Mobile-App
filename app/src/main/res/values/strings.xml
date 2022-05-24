@@ -17,5 +17,6 @@
     <string name="stop_capture">Stop Capture</string>
     <string name="camerax">CameraX</string>
     <string name="logout">LOGOUT</string>
-    <string name="sensors">Sensors</string>
+    <string name="accelerationSensors">Acceleration Sensor</string>
+    <string name="light_sensor">Light Sensor</string>
 </resources>
