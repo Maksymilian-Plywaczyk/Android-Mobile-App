@@ -10,9 +10,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.camera.core.ViewPort
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.example.android_mobile_app.databinding.FragmentSensorsBinding
+import com.jjoe64.graphview.Viewport
 import com.jjoe64.graphview.series.DataPoint
 import com.jjoe64.graphview.series.LineGraphSeries
 import kotlin.math.abs
@@ -26,6 +28,20 @@ class SensorsFragment : Fragment(), SensorEventListener {
 
     private var accelerationCurrentValue: Float = 0.0f
     private var accelerationPreviousValue: Float = 0.0f
+    private var pointsPlotted = 5
+    private var minPointsPlotted = 0
+
+    private lateinit var viewPort:Viewport
+
+    val series: LineGraphSeries<DataPoint> = LineGraphSeries(
+        arrayOf(
+            DataPoint(0.0, 1.0),
+            DataPoint(1.0, 5.0),
+            DataPoint(2.0, 3.0),
+            DataPoint(3.0, 2.0),
+            DataPoint(4.0, 6.0)
+        )
+    )
     override fun onAccuracyChanged(p0: Sensor?, p1: Int) {
 
     }
@@ -57,7 +73,15 @@ class SensorsFragment : Fragment(), SensorEventListener {
         else{
             binding.txtAccel.setBackgroundColor(resources.getColor(com.google.android.material.R.color.design_default_color_background))
         }
-
+        //update the graph
+        pointsPlotted++
+        if(pointsPlotted >500){
+            pointsPlotted = 1
+            series.resetData(arrayOf(DataPoint(1.0,0.0)))
+        }
+        series.appendData(DataPoint(pointsPlotted.toDouble(), changeInAcceleration.toDouble()),true,pointsPlotted)
+        viewPort.setMaxX(pointsPlotted.toDouble())
+        viewPort.setMinX(minPointsPlotted.toDouble())
     }
 
 
@@ -74,18 +98,12 @@ class SensorsFragment : Fragment(), SensorEventListener {
         if (accelerometer != null) {
             sensorManager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_NORMAL)
         }
-
+        viewPort = binding.graph.viewport
+        viewPort.isScrollable = true
+        viewPort.isXAxisBoundsManual = true
         //sample graph code
-        val series: LineGraphSeries<DataPoint> = LineGraphSeries(
-            arrayOf(
-                DataPoint(0.0, 1.0),
-                DataPoint(1.0, 5.0),
-                DataPoint(2.0, 3.0),
-                DataPoint(3.0, 2.0),
-                DataPoint(4.0, 6.0)
-            )
-        )
         binding.graph.addSeries(series)
+
         return binding.root
 
     }
