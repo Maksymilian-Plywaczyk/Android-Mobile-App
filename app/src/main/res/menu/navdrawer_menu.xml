@@ -10,4 +10,9 @@
         android:id="@+id/cameraXFragment"
         android:icon="@android:drawable/ic_menu_camera"
         android:title="@string/camerax" />
+    <item
+        android:id="@+id/sensorsFragment"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:title="@string/sensors" />
+
 </menu>

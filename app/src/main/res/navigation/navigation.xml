@@ -37,6 +37,7 @@
     <fragment
         android:id="@+id/cameraXFragment"
         android:name="com.example.android_mobile_app.CameraXFragment"
+        tools:layout="@layout/fragment_camera_x"
         android:label="CameraXFragment" />
     <fragment
         android:id="@+id/openFragment"
@@ -47,4 +48,9 @@
             android:id="@+id/action_openFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/sensorsFragment"
+        android:name="com.example.android_mobile_app.SensorsFragment"
+        tools:layout="@layout/fragment_sensors"
+        android:label="SensorsFragment" />
 </navigation>
