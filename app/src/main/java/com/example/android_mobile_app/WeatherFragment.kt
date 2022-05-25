@@ -17,7 +17,7 @@ import com.google.firebase.ktx.Firebase
 class WeatherFragment : Fragment() {
     private lateinit var binding: FragmentOpenBinding
     private lateinit var mAuth: FirebaseAuth
-
+    private val weatherApiKey = "95e1d807e64e4be04be3fd6df303ec05"
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -26,7 +26,7 @@ class WeatherFragment : Fragment() {
             inflater,
             R.layout.fragment_open, container, false
         )
-        binding.lougoutButton.setOnClickListener {
+        binding.logoutButton.setOnClickListener {
             view?.findNavController()?.navigate(R.id.action_openFragment_to_loginFragment)
         }
         mAuth = Firebase.auth
