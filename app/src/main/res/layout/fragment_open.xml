@@ -9,6 +9,7 @@
         android:layout_width="match_parent"
         android:background="@drawable/background"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:id="@+id/addressContainer"
             android:layout_width="match_parent"
@@ -235,16 +236,28 @@
 
         <EditText
             android:id="@+id/enterCity"
-            android:textColorHint="@color/white"
             style="@style/HintStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_above="@+id/addressContainer"
-            android:layout_centerHorizontal="true"
+            android:layout_marginHorizontal="15dp"
             android:layout_marginBottom="39dp"
             android:ems="10"
             android:hint="@string/enter_a_city"
             android:inputType="textPersonName"
-            android:text="" />
+            android:text=""
+            android:textColorHint="@color/white" />
+
+        <Button
+            android:id="@+id/submitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/addressContainer"
+            android:layout_marginStart="32dp"
+            android:layout_marginBottom="39dp"
+            android:layout_toEndOf="@+id/enterCity"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
+            android:text="Submit" />
     </RelativeLayout>
 </layout>

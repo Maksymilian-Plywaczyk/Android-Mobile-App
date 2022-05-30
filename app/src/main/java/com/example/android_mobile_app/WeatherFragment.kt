@@ -25,13 +25,14 @@ import java.nio.charset.StandardCharsets.UTF_8
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.text.Charsets.UTF_8
-
+import android.widget.Toast
 
 class WeatherFragment : Fragment() {
     private lateinit var binding: FragmentOpenBinding
     private lateinit var mAuth: FirebaseAuth
     private val weatherApiKey = "95e1d807e64e4be04be3fd6df303ec05"
     private var city = "poznan,pl"
+    private var location = ""
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -44,26 +45,35 @@ class WeatherFragment : Fragment() {
             view?.findNavController()?.navigate(R.id.action_openFragment_to_loginFragment)
         }
         mAuth = Firebase.auth
-        weatherTask().execute()
+        binding.submitButton.setOnClickListener {
+            location =
+                binding.enterCity.text.toString();weatherTask().execute()
+        }
+
         return binding.root
 
     }
+
     inner class weatherTask() : AsyncTask<String, Void, String>() {
         override fun doInBackground(vararg params: String?): String? {
-            var response:String?
-            try{
-                response = URL("https://api.openweathermap.org/data/2.5/weather?q=$city&units=metric&appid=$weatherApiKey").readText(
-                    Charsets.UTF_8
-                )
-            }catch (e: Exception){
+            var response: String?
+            try {
+                response =
+                    URL("https://api.openweathermap.org/data/2.5/weather?q=$location&units=metric&appid=$weatherApiKey").readText(
+                        Charsets.UTF_8
+                    )
+                Log.d("weather update", response)
+            } catch (e: Exception) {
                 response = null
             }
             return response
         }
+
         override fun onPostExecute(result: String?) {
             super.onPostExecute(result)
             try {
                 val jsonObj = JSONObject(result)
+
                 val main = jsonObj.getJSONObject("main")
                 val sys = jsonObj.getJSONObject("sys")
                 val wind = jsonObj.getJSONObject("wind")
@@ -93,9 +103,9 @@ class WeatherFragment : Fragment() {
                 binding.sunset.text =
                     SimpleDateFormat("hh:mm a", Locale.ENGLISH).format(Date(sunset * 1000))
                 binding.wind.text = windSpeed
-            }catch (e:Exception){
+            } catch (e: Exception) {
                 println("error")
+            }
         }
-    }
     }
 }
