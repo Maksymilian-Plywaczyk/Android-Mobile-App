@@ -353,5 +353,19 @@
 <!--                </LinearLayout>-->
 <!--            </LinearLayout>-->
         </LinearLayout>
+
+        <EditText
+            android:id="@+id/enterCity"
+            android:textColorHint="@color/white"
+            style="@style/HintStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/addressContainer"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="39dp"
+            android:ems="10"
+            android:hint="@string/enter_a_city"
+            android:inputType="textPersonName"
+            android:text="" />
     </RelativeLayout>
 </layout>

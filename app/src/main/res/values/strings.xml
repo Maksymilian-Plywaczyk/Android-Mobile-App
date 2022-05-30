@@ -19,4 +19,5 @@
     <string name="logout">LOGOUT</string>
     <string name="accelerationSensors">Acceleration Sensor</string>
     <string name="light_sensor">Light Sensor</string>
+    <string name="enter_a_city">Enter a location</string>
 </resources>
