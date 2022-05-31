@@ -23,17 +23,17 @@
                 android:id="@+id/address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="DHAKA, BD"
+                android:text="@string/location_start"
                 android:textColor="@color/white"
-                android:textSize="24dp" />
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/updated_at"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="20 April 2012, 20:08 PM"
+                android:text="@string/current_date"
                 android:textColor="@color/white"
-                android:textSize="14dp" />
+                android:textSize="14sp" />
         </LinearLayout>
 
 
@@ -49,9 +49,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Clear Sky"
+                android:text=""
                 android:textColor="@color/white"
-                android:textSize="18dp" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/temp"
@@ -59,9 +59,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:fontFamily="sans-serif-thin"
-                android:text="29°C"
+                android:text=""
                 android:textColor="@color/white"
-                android:textSize="90dp" />
+                android:textSize="90sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -73,7 +73,7 @@
                     android:id="@+id/temp_min"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Min Temp: 05:05 AM"
+                    android:text=""
                     android:textColor="@color/white" />
 
                 <Space
@@ -84,7 +84,7 @@
                     android:id="@+id/temp_max"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Max Temp: 05:05 PM"
+                    android:text=""
                     android:textColor="@color/white" />
             </LinearLayout>
 
@@ -128,7 +128,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Sunrise"
+                        android:text="@string/sunrise"
                         android:textColor="@color/white"
                         android:textSize="12dp" />
 
@@ -136,9 +136,9 @@
                         android:id="@+id/sunrise"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="06:40 AM"
+                        android:text=""
                         android:textColor="@color/white"
-                        android:textSize="14dp" />
+                        android:textSize="14sp" />
                 </LinearLayout>
 
                 <Space
@@ -167,17 +167,17 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Sunset"
+                        android:text="@string/sunset"
                         android:textColor="@color/white"
-                        android:textSize="12dp" />
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/sunset"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="06:40 AM"
+                        android:text=""
                         android:textColor="@color/white"
-                        android:textSize="14dp" />
+                        android:textSize="14sp" />
                 </LinearLayout>
 
                 <Space
@@ -206,17 +206,17 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Wind"
+                        android:text="@string/wind"
                         android:textColor="@color/white"
-                        android:textSize="12dp" />
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/wind"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="06:40 AM"
+                        android:text=""
                         android:textColor="@color/white"
-                        android:textSize="14dp" />
+                        android:textSize="14sp" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -258,6 +258,6 @@
             android:layout_toEndOf="@+id/enterCity"
             android:backgroundTint="@color/white"
             android:textColor="@color/black"
-            android:text="Submit" />
+            android:text="@string/enter_location" />
     </RelativeLayout>
 </layout>
