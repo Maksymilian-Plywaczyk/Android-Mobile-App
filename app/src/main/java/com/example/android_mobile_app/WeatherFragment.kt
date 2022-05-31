@@ -1,5 +1,8 @@
 package com.example.android_mobile_app
 
+import android.app.ActionBar
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Log
@@ -26,12 +29,12 @@ import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.text.Charsets.UTF_8
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 
 class WeatherFragment : Fragment() {
     private lateinit var binding: FragmentOpenBinding
     private lateinit var mAuth: FirebaseAuth
     private val weatherApiKey = "95e1d807e64e4be04be3fd6df303ec05"
-    private var city = "poznan,pl"
     private var location = ""
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -49,7 +52,6 @@ class WeatherFragment : Fragment() {
             location =
                 binding.enterCity.text.toString();weatherTask().execute()
         }
-
         return binding.root
 
     }
@@ -80,7 +82,7 @@ class WeatherFragment : Fragment() {
                 val weather = jsonObj.getJSONArray("weather").getJSONObject(0)
                 val updatedAt: Long = jsonObj.getLong("dt")
                 val updatedAtText =
-                    "Updated at: " + SimpleDateFormat("dd/MM/yyyy hh:mm a", Locale.ENGLISH).format(
+                    "Updated at: " + SimpleDateFormat("dd/MM/yyyy hh:mm a", Locale.GERMANY).format(
                         Date(updatedAt * 1000)
                     )
                 val temp = main.getString("temp") + "°C"
@@ -99,9 +101,9 @@ class WeatherFragment : Fragment() {
                 binding.tempMin.text = tempMin
                 binding.tempMax.text = tempMax
                 binding.sunrise.text =
-                    SimpleDateFormat("hh:mm a", Locale.ENGLISH).format(Date(sunrise * 1000))
+                    SimpleDateFormat("hh:mm a", Locale.GERMANY).format(Date(sunrise * 1000))
                 binding.sunset.text =
-                    SimpleDateFormat("hh:mm a", Locale.ENGLISH).format(Date(sunset * 1000))
+                    SimpleDateFormat("hh:mm a", Locale.GERMANY).format(Date(sunset * 1000))
                 binding.wind.text = windSpeed
             } catch (e: Exception) {
                 println("error")

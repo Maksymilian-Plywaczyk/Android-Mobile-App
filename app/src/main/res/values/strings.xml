@@ -20,7 +20,7 @@
     <string name="accelerationSensors">Acceleration Sensor</string>
     <string name="light_sensor">Light Sensor</string>
     <string name="enter_a_city">Enter a location</string>
-    <string name="location_start">POZNAN, PL</string>
+    <string name="location_start"></string>
     <string name="current_date">31 May 2022, 20:08 PM</string>
     <string name="sunrise">Sunrise</string>
     <string name="sunset">Sunset</string>
