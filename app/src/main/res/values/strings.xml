@@ -26,4 +26,5 @@
     <string name="sunset">Sunset</string>
     <string name="wind">Wind</string>
     <string name="enter_location">Enter</string>
+    <string name="email_hint">email</string>
 </resources>

@@ -29,7 +29,7 @@ class LigthSensorFragment : Fragment(),SensorEventListener {
         if(sensorEvent?.sensor?.type ==Sensor.TYPE_LIGHT){
             val light  = sensorEvent.values[0]
 
-            binding.tvText.text = "Sensor: $light\n${brigthness(light)}"
+            binding.tvText.text = "Sensor: $light\n${brightness(light)}"
             binding.circularProgressBar.setProgressWithAnimation(light)
         }
     }
@@ -49,13 +49,13 @@ class LigthSensorFragment : Fragment(),SensorEventListener {
         }
         return binding.root
     }
-    private fun brigthness(brightness:Float):String{
+    private fun brightness(brightness:Float):String{
         return when (brightness.toInt()){
             0 -> "Pitch black"
-            in 1..10 ->"Dark"
-            in 11..50 -> "Grey"
-            in 51..5000->"Normal"
-            in 5001..6000->"Incredibly bright"
+            in 1..1000 ->"Dark"
+            in 1001..2000 -> "Grey"
+            in 2001..5000->"Normal"
+            in 5001..6100->"Incredibly bright"
             else -> "This light will blind you"
         }
     }

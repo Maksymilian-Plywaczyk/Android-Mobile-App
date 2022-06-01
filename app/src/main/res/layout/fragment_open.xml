@@ -25,7 +25,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/location_start"
                 android:textColor="@color/white"
-                android:textSize="24sp" />
+                android:textSize="@dimen/weatherTextSize" />
 
             <TextView
                 android:id="@+id/updated_at"
@@ -33,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/current_date"
                 android:textColor="@color/white"
-                android:textSize="14sp" />
+                android:textSize="16sp" />
         </LinearLayout>
 
 
@@ -107,11 +107,13 @@
                 android:weightSum="3">
 
                 <LinearLayout
+                    android:id="@+id/sunriseLayout"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="#3CF1EBF1"
                     android:gravity="center"
+                    android:visibility="invisible"
                     android:orientation="vertical"
                     android:padding="8dp">
 
@@ -130,7 +132,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/sunrise"
                         android:textColor="@color/white"
-                        android:textSize="12dp" />
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/sunrise"
@@ -138,7 +140,7 @@
                         android:layout_height="wrap_content"
                         android:text=""
                         android:textColor="@color/white"
-                        android:textSize="14sp" />
+                        android:textSize="@dimen/smallWeatherTextSize" />
                 </LinearLayout>
 
                 <Space
@@ -146,11 +148,13 @@
                     android:layout_height="wrap_content" />
 
                 <LinearLayout
+                    android:id="@+id/sunsetLayout"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="#3CF1EBF1"
                     android:gravity="center"
+                    android:visibility = "invisible"
                     android:orientation="vertical"
                     android:padding="8dp">
 
@@ -177,7 +181,7 @@
                         android:layout_height="wrap_content"
                         android:text=""
                         android:textColor="@color/white"
-                        android:textSize="14sp" />
+                        android:textSize="@dimen/smallWeatherTextSize" />
                 </LinearLayout>
 
                 <Space
@@ -185,11 +189,13 @@
                     android:layout_height="wrap_content" />
 
                 <LinearLayout
+                    android:id="@+id/windLayout"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="#3CF1EBF1"
                     android:gravity="center"
+                    android:visibility="invisible"
                     android:orientation="vertical"
                     android:padding="8dp">
 
@@ -216,7 +222,7 @@
                         android:layout_height="wrap_content"
                         android:text=""
                         android:textColor="@color/white"
-                        android:textSize="14sp" />
+                        android:textSize="@dimen/smallWeatherTextSize" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -226,12 +232,13 @@
 
             <Button
                 android:id="@+id/logoutButton"
+                android:visibility="invisible"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:backgroundTint="@color/white"
-                android:textColor="@color/black"
-                android:text="@string/logout" />
+                android:text="@string/logout"
+                android:textColor="@color/black" />
         </LinearLayout>
 
         <EditText

@@ -36,6 +36,9 @@ class WeatherFragment : Fragment() {
     private lateinit var mAuth: FirebaseAuth
     private val weatherApiKey = "95e1d807e64e4be04be3fd6df303ec05"
     private var location = ""
+    private var date = ""
+    private lateinit var calendar:Calendar
+    private lateinit var simpleDateFormat: SimpleDateFormat
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -47,15 +50,25 @@ class WeatherFragment : Fragment() {
         binding.logoutButton.setOnClickListener {
             view?.findNavController()?.navigate(R.id.action_openFragment_to_loginFragment)
         }
+        calendar = Calendar.getInstance()
+        simpleDateFormat = SimpleDateFormat("dd MMMM yyyy HH:mm")
+        date = simpleDateFormat.format(calendar.time)
+        binding.updatedAt.text = date
         mAuth = Firebase.auth
         binding.submitButton.setOnClickListener {
             location =
                 binding.enterCity.text.toString();weatherTask().execute()
+           setVisibility()
         }
         return binding.root
 
     }
-
+    private fun setVisibility(){
+        binding.sunriseLayout.visibility=View.VISIBLE
+        binding.sunsetLayout.visibility=View.VISIBLE
+        binding.windLayout.visibility=View.VISIBLE
+        binding.logoutButton.visibility=View.VISIBLE
+    }
     inner class weatherTask() : AsyncTask<String, Void, String>() {
         override fun doInBackground(vararg params: String?): String? {
             var response: String?
