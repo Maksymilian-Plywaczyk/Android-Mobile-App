@@ -55,7 +55,7 @@
         android:label="SensorsFragment" />
     <fragment
         android:id="@+id/ligthSensorFragment"
-        android:name="com.example.android_mobile_app.LigthSensorFragment"
+        android:name="com.example.android_mobile_app.LightSensorFragment"
         tools:layout="@layout/fragment_ligth_sensor"
         android:label="LigthSensorFragment" />
 </navigation>

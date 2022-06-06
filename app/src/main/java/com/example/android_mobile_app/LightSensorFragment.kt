@@ -15,7 +15,7 @@ import androidx.databinding.DataBindingUtil
 import com.example.android_mobile_app.databinding.FragmentLigthSensorBinding
 
 
-class LigthSensorFragment : Fragment(),SensorEventListener {
+class LightSensorFragment : Fragment(),SensorEventListener {
     private lateinit var binding:FragmentLigthSensorBinding
     private lateinit var sensorManager: SensorManager
     private var brightness: Sensor? = null
